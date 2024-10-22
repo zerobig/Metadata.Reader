@@ -11,7 +11,7 @@ public class MetadataReaderTests
         var reader = new MetadataReader();
 
         // Act
-        var configuration = reader.readMetadata("./TestFiles/Designer");
+        var configuration = reader.readMetadata("../../../TestFiles/Designer");
 
         // Assert
         // TODO:

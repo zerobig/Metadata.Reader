@@ -1,4 +1,6 @@
 ﻿using Metadata.Interfaces;
+using System.Xml.Linq;
+using U8Xml;
 
 namespace Metadata.Reader.Designer;
 
@@ -13,6 +15,16 @@ internal class DesignerReader : IConfigurationReader
 
     public IConfiguration read()
     {
-        throw new NotImplementedException();
+        var metadataPath = Path.Join(path, "Configuration.xml");
+        using (XmlObject xml = XmlParser.ParseFile(metadataPath))
+        {
+            XmlNode root = xml.Root;
+            foreach (XmlNode node in root.Children)
+            {
+                var breakpoint = 1;
+            }
+
+            throw new NotImplementedException();
+        }
     }
 }
